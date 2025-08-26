@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7477/7477790.png" type="image/png" />
+</head>
+<body>
+  <nav>
+    <a href="#"><h1>Weather Time</h1></a>
+    <ul>
+      <li><a href="#" onclick="toggleSearch()">Locations</a></li>
+      <li><a href="#" onclick="openSettings()">Settings</a></li>
+      <li><a href="#" id="aboutBtn">About</a></li>
+    </ul>
+  </nav>
+
+  
+<!-- Locations Panel (SearchBox artık panel) -->
+<div id="searchBox" class="side-panel">
+  <button class="close" onclick="closeSearch()">&times;</button>
+  <h2>Locations</h2>
+  <input type="text" id="cityInput" placeholder="Enter city..." />
+  <button onclick="searchCity()" class="opop">
+    <i class="fa-solid fa-magnifying-glass"></i> Search
+  </button>
+  <div id="searchHistory"></div>
+</div>
+
+
+
+<div id="errorBox"></div>
+<div id="loading"><span></span></div>
+
+  <div class="weather-container" id="weatherBox">
+    <h2 id="weatherCity"></h2>
+    <img id="weatherIcon" src="" alt="Weather Icon" />
+    <p id="weatherTemp"></p>
+    <p id="weatherDesc"></p>
+    <p id="weatherHumidity"></p>
+    <p id="weatherWind"></p>
+
+    <!-- Unit Switch Buttons -->
+    <div class="units">
+      <button id="setCelsius">°C</button>
+      <button id="setFahrenheit">°F</button>
+      <button id="setKelvin">K</button>
+    </div>
+  </div>
+
+
+<div id="aboutPanel">
+  <button id="closeAbout">✖</button>
+  <h2>About</h2>
+  <p><strong>Made by bananacat</strong></p>
+
+  <p>
+    <a href="https://discord.com/users/1408508490300919832" target="_blank">
+      <i class="fa-brands fa-discord"></i> Discord
+    </a>
+  </p>
+  <p>
+    <a href="https://github.com/goodbyebyeworld" target="_blank">
+      <i class="fa-brands fa-github"></i> GitHub
+    </a>
+  </p>
+
+  <div class="about-text">
+    <p>
+      Weather Time is an open-source weather application that allows you to search 
+      for any city and view real-time weather conditions including temperature, 
+      humidity, wind speed, and more. You can switch between Celsius, Fahrenheit, 
+      and Kelvin units, save your recent searches, and even use your current location 
+      to get instant weather data.
+    </p>
+    <p>
+      This project was built with HTML, CSS, and JavaScript using 
+      <a href="https://www.weatherapi.com/" target="_blank">WeatherAPI</a> 
+      as the data provider.
+    </p>
+  </div>
+
+  <div class="powered">
+    <p>
+      Source: <a href="https://github.com/goodbyebyeworld/Basic-Weather-Site" target="_blank">GitHub Repository</a>
+    </p>
+    <p>
+      Powered by <a href="https://www.weatherapi.com/" target="_blank">WeatherAPI</a>
+    </p>
+  </div>
+</div>
+
+<div id="settingsPanel" class="side-panel">
+  <button class="close" onclick="closeSettings()">✖</button>
+  <h2>Settings</h2>
+
+  <div class="theme-switch">
+    <label>Theme</label>
+    <button onclick="setTheme('light')">Light</button>
+    <button onclick="setTheme('dark')">Dark</button>
+  </div>
+
+  <div class="translate-switch">
+    <label>Translate</label>
+    <select id="languageSelect" onchange="changeLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="tr">Türkçe</option>
+      <option value="kk">Қазақша</option>
+      <option value="el">Ελληνικά</option>
+      <option value="de">Deutsch</option>
+      <option value="fr">Français</option>
+      <option value="es">Español</option>
+      <option value="it">Italiano</option>
+      <option value="ru">Русский</option>
+      <option value="ar">العربية</option>
+      <option value="zh">中文 (简体)</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+      <option value="hi">हिन्दी</option>
+      <option value="fa">فارسی</option>
+      <option value="pt">Português</option>
+      <option value="nl">Nederlands</option>
+      <option value="pl">Polski</option>
+      <option value="sv">Svenska</option>
+      <option value="cs">Čeština</option>
+      <option value="uk">Українська</option>
+      <option value="ro">Română</option>
+      <option value="hu">Magyar</option>
+      <option value="th">ไทย</option>
+      <option value="id">Bahasa Indonesia</option>
+      <option value="ms">Bahasa Melayu</option>
+      <option value="vi">Tiếng Việt</option>
+      <option value="sr">Српски</option>
+      <option value="bg">Български</option>
+      <option value="hr">Hrvatski</option>
+      <option value="da">Dansk</option>
+      <option value="fi">Suomi</option>
+      <option value="he">עברית</option>
+    </select>
+  </div>
+</div>
+  <script src="script.js"></script>
+  <script src="about.js"></script>
+  <script src="settings.js"></script>
+  <script src="setting.js"></script>
+  <script src="search.js"></script>
+</body>
+</html>
