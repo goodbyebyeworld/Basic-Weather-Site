@@ -1,102 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Weather App</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet" />
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7477/7477790.png" type="image/png" />
-  <style>
-    /* Settings Modal Styles */
-    #settingsModal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #settingsModal .modal-content {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      width: 300px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    #settingsModal h3 {
-      margin: 0;
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-
-    #settingsModal input[type="color"] {
-      width: 100%;
-      padding: 10px;
-      border: 2px solid #ddd;
-      border-radius: 5px;
-    }
-
-    #settingsModal .close {
-      background-color: #ff4e4e;
-      color: white;
-      padding: 5px 10px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    #settingsModal .close:hover {
-      background-color: #ff3333;
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <a href="#"><h1>Weather Time</h1></a>
-    <ul>
-      <li><a href="#" onclick="toggleSearch()">Locations</a></li>
-      <li><a href="#" onclick="openSettings()">Settings</a></li>
-      <li><a href="#">About</a></li>
-    </ul>
-    <div id="searchBox">
-      <input type="text" id="cityInput" placeholder="Enter city..." />
-      <button onclick="searchCity()" class="opop"><i class="fa-solid fa-magnifying-glass"></i></button>
-      <div id="searchHistory" style="display:none;"></div>
-    </div>
-  </nav>
-
-  <div id="errorBox"></div>
-
-  <div id="loading"><span></span></div>
-
-  <div class="weather-container" id="weatherBox">
-    <h2 id="weatherCity"></h2>
-    <img id="weatherIcon" src="" alt="Weather Icon" />
-    <p id="weatherTemp"></p>
-    <p id="weatherDesc"></p>
-    <p id="weatherHumidity"></p>
-    <p id="weatherWind"></p>
-  </div>
-
-  <!-- Settings Modal -->
-  <div id="settingsModal">
-    <div class="modal-content">
-      <h3>Settings</h3>
-      <label for="bgColor">Background Color</label>
-      <input type="color" id="bgColor" value="#ffffff" onchange="changeBackgroundColor(event)" />
-      <br/><br/>
-      <button class="close" onclick="closeSettings()">Close</button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://files.catbox.moe/mln0rn.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>ParrotGames</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
